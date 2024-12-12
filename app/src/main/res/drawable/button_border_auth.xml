@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-</selector>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#2B6303"/>
+    <corners android:radius="10dp"/>
+    <stroke android:color="#d9d9d9" android:width="2dp"/>
+</shape>
