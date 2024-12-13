@@ -7,4 +7,67 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <Spinner
+        android:id="@+id/select_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_home_activity"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/select_language"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/select_language"
+        app:layout_constraintTop_toTopOf="@+id/select_language"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/ic_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="thangtq.it@gmail.com"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:text="Trial"/>
+
+        <ImageView
+            android:id="@+id/email_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="Email Icon"
+            android:src="@drawable/arrow_down_icon" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/homeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_language"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
