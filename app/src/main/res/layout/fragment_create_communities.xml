@@ -3,11 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.CreateCommunitiesFragment">
 
     <ScrollView
+        android:id="@+id/create_communities"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -19,12 +22,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:maxLines="2"
+                android:paddingVertical="20sp"
                 android:text="Create a new organization"
                 android:textAlignment="center"
-                android:textSize="40dp"
-                android:textStyle="bold"
-                android:paddingVertical="20dp">
-            </TextView>
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -34,77 +37,79 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:weightSum="10"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:weightSum="10">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="8dp">
+                            android:layout_marginBottom="8dp"
+                            android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
                                 android:text="Organization Name"
                                 android:textSize="16dp"
-                                android:textStyle="bold"
-                                android:layout_marginRight="10dp">
-                            </TextView>
+                                android:textStyle="bold" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="(It can be changed later)"
                                 android:textSize="16dp"
-                                android:textStyle="normal">
-                            </TextView>
+                                android:textStyle="normal" />
                         </LinearLayout>
+
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Enter your name"
                             android:background="@drawable/customize_edit_text"
-                            android:textSize="18dp"
-                            android:padding="10dp">
-                        </EditText>
+                            android:hint="Enter your name"
+                            android:padding="10dp"
+                            android:textSize="18dp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
                             android:text="Image"
                             android:textSize="16dp"
-                            android:textStyle="bold"
-                            android:layout_marginBottom="8dp">
-                        </TextView>
+                            android:textStyle="bold" />
+
                         <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="250dp"
+                            android:layout_weight="1"
                             android:background="@drawable/dashed_border"
-                            android:padding="16dp"
-                            android:layout_weight="1">
+                            android:padding="16dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="vertical"
-                                android:gravity="center">
+                                android:gravity="center"
+                                android:orientation="vertical">
+
                                 <Button
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:background="@drawable/upload_image_border"
                                     android:drawableLeft="@drawable/upload_svgrepo_com"
                                     android:drawablePadding="8dp"
-                                    android:background="@drawable/upload_image_border"
                                     android:text="Upload Image"
                                     android:textColor="#4CAF50" />
                             </LinearLayout>
@@ -114,29 +119,24 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginBottom="8dp">
+                            android:layout_marginBottom="8dp"
+                            android:orientation="horizontal">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Organization Categories"
-                                android:textSize="16dp"
-                                android:textStyle="bold"
-                                android:layout_marginRight="10dp">
-                            </TextView>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(It can not be changed after creation)"
-                                android:textSize="16dp"
-                                android:textStyle="normal">
-                            </TextView>
+                                android:layout_marginRight="10dp"
+                                android:text="@string/formatted_text"
+                                android:textSize="16dp"/>
+
                         </LinearLayout>
+
                         <com.google.android.material.card.MaterialCardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -145,61 +145,172 @@
 
                             <com.google.android.material.chip.ChipGroup
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:padding="16dp">
+                                android:layout_height="200dp"
+                                android:padding="10dp">
 
                                 <com.google.android.material.chip.Chip
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Investing"/>
+                                    app:chipStrokeColor="@color/mainColor"
+                                    android:text="Investing" />
 
                                 <com.google.android.material.chip.Chip
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Healthcare"/>
+                                    app:chipStrokeColor="@color/mainColor"
+                                    android:text="Healthcare" />
 
                                 <com.google.android.material.chip.Chip
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Banking"/>
+                                    app:chipStrokeColor="@color/mainColor"
+                                    android:text="Banking" />
 
                                 <com.google.android.material.chip.Chip
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Insurance"/>
+                                    app:chipStrokeColor="@color/mainColor"
+                                    android:text="Insurance" />
 
                                 <com.google.android.material.chip.Chip
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Trade"/>
+                                    app:chipStrokeColor="@color/mainColor"
+                                    android:text="Trade" />
 
                                 <com.google.android.material.chip.Chip
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Education"/>
+                                    app:chipStrokeColor="@color/mainColor"
+                                    android:text="Education" />
 
                                 <com.google.android.material.chip.Chip
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Digital"/>
+                                    app:chipStrokeColor="@color/mainColor"
+                                    android:text="Digital" />
 
                                 <com.google.android.material.chip.Chip
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Exchange"/>
+                                    app:chipStrokeColor="@color/mainColor"
+                                    android:text="Exchange" />
 
                                 <com.google.android.material.chip.Chip
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Ecommerce"/>
+                                    app:chipStrokeColor="@color/mainColor"
+                                    android:text="Ecommerce" />
                             </com.google.android.material.chip.ChipGroup>
                         </com.google.android.material.card.MaterialCardView>
-
-
                     </LinearLayout>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Connect social media"
+                        android:layout_marginTop="8dp">
+                    </TextView>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Twitter"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="8dp">
+                    </TextView>
 
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter your twitter"
+                        android:textSize="18dp"
+                        android:padding="10dp"
+                        android:background="@drawable/customize_edit_text"
+                        android:layout_marginBottom="8dp">
+                    </EditText>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Facebook"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="8dp">
+                    </TextView>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter your facebook"
+                        android:textSize="18dp"
+                        android:padding="10dp"
+                        android:background="@drawable/customize_edit_text"
+                        android:layout_marginBottom="8dp">
+                    </EditText>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Discord"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="8dp">
+                    </TextView>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter your discord"
+                        android:textSize="18dp"
+                        android:padding="10dp"
+                        android:background="@drawable/customize_edit_text"
+                        android:layout_marginBottom="8dp">
+                    </EditText>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Instagram"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="8dp">
+                    </TextView>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter your instagram"
+                        android:textSize="18dp"
+                        android:padding="10dp"
+                        android:background="@drawable/customize_edit_text"
+                        android:layout_marginBottom="8dp">
+                    </EditText>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your Website"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:layout_marginBottom="8dp">
+                    </TextView>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter your website"
+                        android:textSize="18dp"
+                        android:padding="10dp"
+                        android:background="@drawable/customize_edit_text"
+                        android:layout_marginBottom="8dp">
+                    </EditText>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Create organization"
+                        android:textColor="@color/white"
+                        android:background="@drawable/create_button">
+
+                    </Button>
 
                 </LinearLayout>
             </FrameLayout>
