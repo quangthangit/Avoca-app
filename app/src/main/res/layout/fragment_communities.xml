@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F9F6FB"
+    tools:context=".fragment.CommunitiesFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="Organization"
+            android:textFontWeight="700"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="25dp" />
+
+        <Button
+            android:id="@+id/btn_createCommunities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/button_shape"
+            android:padding="12dp"
+            android:text="Create Organization"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="#2B6303" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:background="@drawable/border_selecter"
+        android:layout_gravity="right"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_bgr_auth"
+            android:src="@drawable/baseline_settings_input_component_24" />
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:paddingHorizontal="25dp"
+            android:paddingVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E8E6E8"
+            android:src="@drawable/baseline_settings_input_component_24" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_shape"
+        android:padding="12dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Vào home communities"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
