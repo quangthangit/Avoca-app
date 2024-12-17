@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.avoca_app.fragment.CommunitiesFragment
+import com.example.avoca_app.fragment.CreateCommunitiesFragment
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,5 +26,8 @@ class HomeActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.homeLayout, fragment)
         fragmentTransaction.commit()
+    }
+    fun switchToCreateCommunitiesFragment() {
+        replaceFragment(CreateCommunitiesFragment())
     }
 }

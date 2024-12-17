@@ -26,6 +26,7 @@
             android:textSize="25dp" />
 
         <Button
+            android:id="@+id/btn_createCommunities"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -67,6 +68,16 @@
             android:background="#E8E6E8"
             android:src="@drawable/baseline_settings_input_component_24" />
     </LinearLayout>
-    
+
+    <Button
+        android:id="@+id/btn_dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_shape"
+        android:padding="12dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Vào home communities"
+        android:textColor="#FFFFFF" />
 
 </LinearLayout>
