@@ -40,8 +40,12 @@ class CommunitiesFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_communities, container, false)
 
-        val btnCreateCommunities: Button = view.findViewById(R.id.btn_dash)
+        val btnCreateCommunities: Button = view.findViewById(R.id.btn_createCommunities)
         btnCreateCommunities.setOnClickListener {
+            (activity as? HomeActivity)?.switchToCreateCommunitiesFragment()
+        }
+        val btnCommunities: Button = view.findViewById(R.id.btn_dash)
+        btnCommunities.setOnClickListener {
             val intent = Intent(activity, HomeCommunitiesActivity::class.java)
             startActivity(intent)
         }
