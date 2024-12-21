@@ -18,18 +18,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_home_communities)
+        setContentView(R.layout.activity_auth)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        btnShowNav = findViewById(R.id.btnShowNav)
-        navView = findViewById(R.id.nav_view)
-
-        btnShowNav.setOnClickListener {
-            navView.visibility = View.VISIBLE
-        }
+        replaceFragment(LoginFragment())
+        findViewById<Button>(R.layout.activity_home_communities)
     }
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager

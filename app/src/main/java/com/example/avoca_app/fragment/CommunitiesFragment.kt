@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.example.avoca_app.HomeActivity
+import com.example.avoca_app.HomeCommunitiesActivity
 import com.example.avoca_app.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -39,9 +40,10 @@ class CommunitiesFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_communities, container, false)
 
-        val btnCreateCommunities: Button = view.findViewById(R.id.btn_createCommunities)
+        val btnCreateCommunities: Button = view.findViewById(R.id.btn_dash)
         btnCreateCommunities.setOnClickListener {
-            (activity as? HomeActivity)?.switchToCreateCommunitiesFragment()
+            val intent = Intent(activity, HomeCommunitiesActivity::class.java)
+            startActivity(intent)
         }
         return view
     }
