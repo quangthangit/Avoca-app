@@ -1,51 +1,74 @@
 package com.example.avoca_app
 
-import android.annotation.SuppressLint
-import android.graphics.Rect
+
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.View
-import android.widget.Button
+import android.view.MenuItem
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.example.avoca_app.fragment.Dashboard
 import com.google.android.material.navigation.NavigationView
 
-class HomeCommunitiesActivity : AppCompatActivity() {
-    private lateinit var btnShowNav: View
-    private lateinit var navView: NavigationView
-    private lateinit var mainLayout: ConstraintLayout
-    @SuppressLint("ClickableViewAccessibility")
+class HomeCommunitiesActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var btnMenu: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_home_communities)
-        ViewCompat.setOnApplyWindowInsetsListener(/* view = */ findViewById(R.id.main)) { v, insets ->
+        drawerLayout = findViewById(R.id.drawer_layout)
+
+        ViewCompat.setOnApplyWindowInsetsListener(drawerLayout) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-
         }
-        btnShowNav = findViewById(R.id.btnShowNav)
-        navView = findViewById(R.id.nav_view)
-        mainLayout = findViewById(R.id.main)
 
-        btnShowNav.setOnClickListener {
-            navView.visibility = View.VISIBLE
-        }
-        mainLayout.setOnTouchListener { _, event ->
-            if (event.action == MotionEvent.ACTION_DOWN && navView.visibility == View.VISIBLE) {
-                val navRect = Rect()
-                navView.getGlobalVisibleRect(navRect)
+        btnMenu = findViewById<ImageView>(R.id.btnMenu)
 
-                if (!navRect.contains(event.rawX.toInt(), event.rawY.toInt())) {
-                    navView.visibility = View.GONE
-                }
+        val navigationView = findViewById<NavigationView>(R.id.nav_view)
+        navigationView.setNavigationItemSelectedListener(this)
+
+        btnMenu.setOnClickListener {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START)
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START)
             }
-            false
         }
 
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, Dashboard()).commit()
+            navigationView.setCheckedItem(R.id.nav_home)
+        }
+    }
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_home -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, Dashboard()).commit()
+//            R.id.missions -> supportFragmentManager.beginTransaction()
+//                .replace(R.id.fragment_container, SettingsFragment()).commit()
+//            R.id.lesson_category -> supportFragmentManager.beginTransaction()
+//                .replace(R.id.fragment_container, ShareFragment()).commit()
+//            R.id.lessons -> supportFragmentManager.beginTransaction()
+//                .replace(R.id.fragment_container, AboutFragment()).commit()
+            else -> return false
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
+    }
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 }
