@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_published"
+        android:title="Published" />
+    <item
+        android:id="@+id/menu_unpublished"
+        android:title="Unpublished" />
+    <item
+        android:id="@+id/menu_draft"
+        android:title="Draft" />
+</menu>

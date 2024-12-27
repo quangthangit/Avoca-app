@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_quiz"
+        android:title="Quiz" />
+    <item
+        android:id="@+id/menu_survey"
+        android:title="Survey" />
+    <item
+        android:id="@+id/menu_social"
+        android:title="Social" />
+    <item
+        android:id="@+id/menu_proof_of_work"
+        android:title="Proof of work" />
+    <item
+        android:id="@+id/menu_referral"
+        android:title="Referral" />
+    <item
+        android:id="@+id/menu_assessment"
+        android:title="Assessment" />
+    <item
+        android:id="@+id/menu_test"
+        android:title="Test" />
+</menu>
