@@ -43,6 +43,7 @@ class MissionPage : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_mission_page, container, false)
 
+
         val mission_type = view.findViewById<EditText>(R.id.mission_type_edittext)
         val mission_status = view.findViewById<EditText>(R.id.mission_status_edittext)
         val mission_start_date = view.findViewById<EditText>(R.id.mission_create_at_edittext)

@@ -56,6 +56,7 @@ class HomeCommunitiesActivity : AppCompatActivity(), NavigationView.OnNavigation
                 .replace(R.id.fragment_container, Dashboard()).commit()
             R.id.missions -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, MissionPage()).commit()
+
 //            R.id.lesson_category -> supportFragmentManager.beginTransaction()
 //                .replace(R.id.fragment_container, ShareFragment()).commit()
 //            R.id.lessons -> supportFragmentManager.beginTransaction()

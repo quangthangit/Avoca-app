@@ -45,6 +45,7 @@ class MissionFragment : Fragment() {
             showStatusPopup(it, typeEdittext)
         }
 
+
         return view
     }
 

@@ -13,6 +13,7 @@
         android:orientation="horizontal"
         android:padding="16dp">
 
+
         <TextView
             android:layout_width="48dp"
             android:layout_height="wrap_content"
