@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.avoca_app.fragment.Dashboard
 import com.example.avoca_app.fragment.MissionPage
+import com.example.avoca_app.fragment.SettingFragment
 import com.google.android.material.navigation.NavigationView
 
 class HomeCommunitiesActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -56,6 +57,7 @@ class HomeCommunitiesActivity : AppCompatActivity(), NavigationView.OnNavigation
                 .replace(R.id.fragment_container, Dashboard()).commit()
             R.id.missions -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, MissionPage()).commit()
+            R.id.setting -> supportFragmentManager.beginTransaction().replace(R.id.fragment_container, SettingFragment()).commit()
 
 //            R.id.lesson_category -> supportFragmentManager.beginTransaction()
 //                .replace(R.id.fragment_container, ShareFragment()).commit()
