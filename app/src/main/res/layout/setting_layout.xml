@@ -1,0 +1,202 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Setting Header -->
+        <TextView
+            android:id="@+id/tvSettingHeader"
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:text="SETTING"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Organization Logo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Organization Logo"
+                android:textSize="16sp"
+                android:paddingBottom="8dp" />
+
+            <ImageView
+                android:id="@+id/ivOrganizationLogo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/arrow_down_icon"
+                android:contentDescription="Organization Logo" />
+
+            <Button
+                android:id="@+id/btnUploadLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Upload Logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:text="Organization Name"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Organization Name -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <EditText
+                android:id="@+id/etOrganizationName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Organization Name"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:text="dungcq" />
+        </LinearLayout>
+
+        <!-- Organization URL -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Organization URL"
+                android:textSize="16sp"
+                android:paddingBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvOrganizationURL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="https://play.avocaapp.com/dungcq"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnEditURL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit" />
+
+                <Button
+                    android:id="@+id/btnCopyURL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Copy" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Organization Description -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Organization Description"
+                android:textSize="16sp"
+                android:paddingBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etOrganizationDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:hint="Enter Organization Description"
+                android:inputType="textMultiLine"
+                android:minHeight="120dp"
+                android:textColorHint="#546E7A" />
+        </LinearLayout>
+
+        <!-- Social Media Links -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Social Media Links"
+                android:textSize="16sp"
+                android:paddingBottom="8dp" />
+
+            <!-- Facebook -->
+            <EditText
+                android:id="@+id/etFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="https://www.facebook.com/username"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColorHint="#546E7A" />
+
+            <!-- Twitter -->
+            <EditText
+                android:id="@+id/etTwitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="\@username"
+                android:minHeight="48dp" />
+
+            <!-- Discord -->
+            <EditText
+                android:id="@+id/etDiscord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="discordapp.com/users/yourID"
+                android:inputType="textUri"
+                android:minHeight="48dp" />
+
+            <!-- Instagram -->
+            <EditText
+                android:id="@+id/etInstagram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="http://www.instagram.com/username"
+                android:minHeight="48dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+
+            android:text="Save" />
+    </LinearLayout>
+
+</ScrollView>
